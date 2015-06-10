@@ -18,6 +18,8 @@ baltimore <- subset(nei, fips == "24510")
 # in BaltimoreCity
 totalbyyear <- with(baltimore, tapply(Emissions, year, sum, na.rm = TRUE))
 totalbyyear
+totalbyyear <- aggregate(Emissions ~ year, sum, data = baltimore)
+totalbyyear
 
 # here the total number of observations is much smaller, so large differences
 # in the number of observations could have big effects on what we see
